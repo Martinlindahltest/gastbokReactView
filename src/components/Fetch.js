@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Display from './Display'
+import Form from './Form'
+
 
 export default class Fetch extends Component {
     constructor(props) {
@@ -19,6 +21,8 @@ export default class Fetch extends Component {
     render() {
         return (
             <div>
+                <Form />
+
                 <Display apiData={this.state.data[0]} />
                 <Display apiData={this.state.data[1]} />
                 <Display apiData={this.state.data[2]} />
