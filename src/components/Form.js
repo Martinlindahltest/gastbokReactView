@@ -4,8 +4,8 @@ export default class Form extends Component {
     constructor(props) {
         super(props)
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     
         this.state = {
             inputText: 'inittext',
@@ -27,16 +27,13 @@ export default class Form extends Component {
                 namn: this.state.inputName,
                 text: this.state.inputText
             })
-})
+        })
       }
     
-    
-
     handleChange(event) {
         console.log(event.target.value)
         this.setState({
             [event.target.name]: event.target.value
-        
         });
       }
 
@@ -44,14 +41,15 @@ export default class Form extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>
-
-                    <input type="text" name="inputName"value={this.state.name} onChange={this.handleChange} />
-
-                    <input type="text" name="inputText" value={this.state.text} onChange={this.handleChange} />
-
+                    <label >
+                        namn: 
+                        <input type="text" name="inputName"value={this.state.name} onChange={this.handleChange}/><br/>
+                        inlägg:
+                        <input type="text" name="inputText" value={this.state.text} onChange={this.handleChange} /><br />
                     </label>
                     <input type="submit" value="Submit" />
+
+                    
                 </form> 
             </div>
         )
