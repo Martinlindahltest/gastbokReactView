@@ -15,7 +15,7 @@ export default class Form extends Component {
 
     handleSubmit(event) {
         alert('A name was submitted: ' + this.state.inputName + ' ' + this.state.inputText);
-        event.preventDefault();
+        //event.preventDefault();
 
         fetch('http://localhost:4000/', {
             method: 'POST',
@@ -24,8 +24,8 @@ export default class Form extends Component {
                 'Content-Type': 'application/json'
               },
             body: JSON.stringify({
-                namn: this.state.name,
-                text: this.state.text
+                namn: this.state.inputName,
+                text: this.state.inputText
             })
 })
       }

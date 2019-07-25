@@ -8,26 +8,39 @@ export default class Fetch extends Component {
         super(props)
     
         this.state = {
-             data: 'init'
+             data: [{
+                 namn: 'init namn',
+                 text: 'init text'
+
+                    }]
         }
     }
+
 
     componentDidMount() {
           fetch('http://localhost:4000/')
           .then(response => response.json())
-          .then(data => this.setState({ data }));
+          .then(data => this.setState({ data })
+        );
+
       }
-    
+
+
     render() {
+
+        let array = this.state.data.map(obj => <Display apiData={obj} />)
+        array = array.reverse()
+
         return (
             <div>
                 <Form />
-
-                <Display apiData={this.state.data[0]} />
-                <Display apiData={this.state.data[1]} />
-                <Display apiData={this.state.data[2]} />
-
-                {console.log(this.state.data.namn)}
+                {array}
+            {
+               // <Display apiData={this.state.data[0]} />
+               // <Display apiData={this.state.data[1]} />
+               // <Display apiData={this.state.data[2]} />
+            }
+                {console.log(this.state.data)}
             </div>
         )
     }
