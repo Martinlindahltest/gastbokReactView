@@ -8,13 +8,13 @@ export default class Form extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     
         this.state = {
-            inputText: 'inittext',
-            inputName: 'initname'
+            inputText: 'text',
+            inputName: 'namn'
         }
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.inputName + ' ' + this.state.inputText);
+        //alert('A name was submitted: ' + this.state.inputName + ' ' + this.state.inputText);
         //event.preventDefault();
 
         fetch('http://localhost:4000/', {
@@ -39,15 +39,24 @@ export default class Form extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <form onSubmit={this.handleSubmit}>
-                    <label >
-                        namn: 
-                        <input type="text" name="inputName"value={this.state.name} onChange={this.handleChange}/><br/>
-                        inlägg:
-                        <input type="text" name="inputText" value={this.state.text} onChange={this.handleChange} /><br />
-                    </label>
-                    <input type="submit" value="Submit" />
+                        {
+                      //  inlägg:
+                      //  <input type="text" name="inputText" value={this.state.text} onChange={this.handleChange} /><br />
+                        }
+                        <br/>
+                        <div class="input-field col s6 l3">
+
+                            <textarea id="textarea1" name="inputText" class="materialize-textarea" value={this.state.text} onChange={this.handleChange} ></textarea>
+                            <label>Inlägg: </label>
+                        </div>
+                        <br/>
+                        <div className="input-field col s6 l3">
+                            <input type="text" name="inputName"value={this.state.name} onChange={this.handleChange}/>
+                            <label>Namn: </label>
+                        </div>
+                    <input type="submit" value="Skicka" />
 
                     
                 </form> 

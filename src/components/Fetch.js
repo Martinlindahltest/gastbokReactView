@@ -32,13 +32,8 @@ export default class Fetch extends Component {
 
         return (
             <div>
-                <Form />
+                    <Form />
                 {array}
-            {
-               // <Display apiData={this.state.data[0]} />
-               // <Display apiData={this.state.data[1]} />
-               // <Display apiData={this.state.data[2]} />
-            }
                 {console.log(this.state.data)}
             </div>
         )
