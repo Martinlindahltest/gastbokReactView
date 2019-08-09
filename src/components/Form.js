@@ -34,6 +34,9 @@ export default class Form extends Component {
                 text: this.state.inputText
             })
         }).then(val => console.log('value', val))
+        alert('Tack! Ditt inlägg: ' + this.state.inputText + ' Namn: ' + this.state.inputName)
+        this.props.fetchAgain()
+
 
       }
     
@@ -72,10 +75,10 @@ export default class Form extends Component {
                         </div>
                         <button onClick={this.handleSubmit}>Skicka</button>
                         <br/>
-
-                        <button onClick={this.props.fetchAgain}>fetchAgain</button>
-                        <button onClick={this.logProps}>log props</button>
-
+{
+                     //   <button onClick={this.props.fetchAgain}>fetchAgain</button>
+                     //   <button onClick={this.logProps}>log props</button>
+}
             </div>
         )
     }
