@@ -21,7 +21,7 @@ export default class Fetch extends Component {
 
 
     componentDidMount() {
-          fetch('http://localhost:4000/')
+          fetch('http://52.59.214.158:4000/')
           .then(response => response.json())
           .then(data => this.setState({ data })
         );
@@ -30,7 +30,7 @@ export default class Fetch extends Component {
     fetchAgain = () => {
         console.log('fetchAgain körs i Fetch')
 
-        fetch('http://localhost:4000/')
+        fetch('http://52.59.214.158:4000/')
         .then(response => response.json())
         .then(data => this.setState({ data })
       );

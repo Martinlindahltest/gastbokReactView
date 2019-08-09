@@ -23,7 +23,7 @@ export default class Form extends Component {
         //event.preventDefault();
         
 
-        fetch('http://localhost:4000/', {
+        fetch('http://52.59.214.158:4000/', {
             method: "POST",
             headers: {
                 'Accept': 'application/json, text/plain, */*',
