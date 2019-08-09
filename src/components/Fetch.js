@@ -14,6 +14,9 @@ export default class Fetch extends Component {
 
                     }]
         }
+
+        this.fetchAgain = this.fetchAgain.bind(this);
+
     }
 
 
@@ -24,6 +27,17 @@ export default class Fetch extends Component {
         );
       }
 
+    fetchAgain = () => {
+        console.log('fetchAgain körs i Fetch')
+
+        fetch('http://localhost:4000/')
+        .then(response => response.json())
+        .then(data => this.setState({ data })
+      );
+    }
+
+    
+
 
     render() {
 
@@ -32,7 +46,7 @@ export default class Fetch extends Component {
 
         return (
             <div>
-                    <Form />
+                    <Form fetchAgain={this.fetchAgain} />
                 {array}
                 {console.log(this.state.data)}
             </div>
